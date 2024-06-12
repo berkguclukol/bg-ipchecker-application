@@ -1,0 +1,45 @@
+{
+  "name": "bg-ipchecker-application",
+  "version": "1.0.0",
+  "description": "Program that shows your public IP address and related details.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "watch": "npx tailwindcss -i ./public/vendor/tailwindcss/tailwind.base.css -o ./public/vendor/tailwindcss/tailwind.css --watch"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berkguclukol/ipchecker-application"
+  },
+  "author": "Berk Guclukol",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3",
+    "tailwindcss": "^3.4.4"
+  },
+  "bugs": {
+    "url": "https://github.com/berkguclukol/bg-ipchecker-application/issues"
+  },
+  "homepage": "https://github.com/berkguclukol/bg-ipchecker-application#readme",
+  "build": {
+    "productName": "BG IP Checker Application",
+    "win": {
+      "icon": "public/assets/icon.ico",
+      "target": [
+        {
+          "target": "portable"
+        },
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" class="d-flex">
+<head>
+    <meta charset="UTF-8">
+    <title>BG IP Checker Application</title>
+    <link rel="stylesheet" href="vendor/tailwindcss/tailwind.css">
+</head>
+<body onload="getIPInfo()" class="overflow-hidden bg-slate-950">
+<header class="fixed top-0 left-0 right-0 h-12 px-3 flex items-center justify-between">
+    <div class="flex items-center gap-2 text-slate-200">
+        <img src="../icon.png" class="h-7" alt="" />
+        <h6 class="text-sm font-normal">BG IP Checker Application v1.0</h6>
+    </div>
+    <div class="header-buttons flex gap-1">
+        <button id="minimizeBtn" title="Minimize" class="bg-green-500 text-green-950 w-6 h-6 flex items-center justify-center rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+            </svg>
+        </button>
+        <button class="bg-amber-500 text-amber-950 cursor-not-allowed w-6 h-6 flex items-center justify-center rounded-full" id="maximizeBtn" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v8.25A2.25 2.25 0 0 0 6 16.5h2.25m8.25-8.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-7.5A2.25 2.25 0 0 1 8.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 0 0-2.25 2.25v6" />
+            </svg>
+
+        </button>
+        <button id="quitBtn" title="Exit" class="bg-red-600 text-red-950 w-6 h-6 flex items-center justify-center rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+</header>
+<main class="fixed top-12 left-0 right-0 bottom-0 text-slate-200 bg-slate-900 m-2 flex flex-col rounded-md">
+    <div class="py-3 px-3">
+        <h6 class="m-0 text-sm font-semibold opacity-50">What is my IP address?</h6>
+        <h1 class="text-4xl bg-slate-800 rounded-md p-2 font-bold m-0" id="ipAddress"></h1>
+    </div>
+    <div class="py-3 px-3">
+        <h6 class="m-0 text-sm font-semibold opacity-50">IP address coordinates:</h6>
+        <h3 id="coordinates" class="text-2xl font-semibold"></h3>
+    </div>
+    <div class="py-3 px-3">
+        <h6 class="m-0 text-sm font-semibold opacity-50">My IP address location:</h6>
+        <h3 id="adressLocation" class="text-2xl font-semibold"></h3>
+    </div>
+    <div class="py-3 px-3">
+        <h6 class="m-0 text-sm font-semibold opacity-50">Internet service provider timezone:</h6>
+        <h3 id="isptimezone" class="text-2xl font-semibold"></h3>
+    </div>
+    <div class="py-3 px-3">
+        <button class="px-8 py-3 bg-red-700 text-slate-100 rounded-full flex items-center gap-2 font-semibold" onclick="getIPInfo()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+            </svg>
+            Refresh
+        </button>
+    </div>
+    <div class="py-0 px-3 mb-3 opacity-50">
+        <h6 id="lastUpdate"></h6>
+    </div>
+</main>
+
+<script src="script/appFunction.js"></script>
+<script defer src="../index.js"></script>
+</body>
+</html>
